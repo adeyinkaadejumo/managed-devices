@@ -1,0 +1,447 @@
+name: Endpoints
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/devices
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'GET Devices'
+      description: 'Returns list of all devices.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      operating_system:
+        name: operating_system
+        description: ''
+        required: false
+        example: '"Android" or "iOS"'
+        type: string.
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanBodyParameters:
+      operating_system: '"Android" or "iOS"'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{ "data": [ { "id": "1", "type": "devices", "attributes": { "form_factor": "Tablet", "serial_number": "1011057232", "imei": "083875543108664", "device_manufacturer_id": 21, "device_manufacturer": { "id": 21, "name": "Error", "created_at": "2024-02-01T13:18:56.000000Z", "updated_at": "2024-02-01T13:18:56.000000Z" }, "device_model_id": 11, "device_model": { "id": 11, "name": "Quod", "device_manufacturer_id": 22, "created_at": "2024-02-01T13:18:56.000000Z", "updated_at": "2024-02-01T13:18:56.000000Z" }, "operating_system": "iOS", "user_id": 11, "user": { "id": 11, "name": "Abagail Kreiger", "email": "koepp.keegan@example.org", "email_verified_at": "2024-02-01T13:18:56.000000Z", "created_at": "2024-02-01T13:18:56.000000Z", "updated_at": "2024-02-01T13:18:56.000000Z" }, "sim_card_id": 11, "sim_card": { "id": 11, "serial_number": "085684662869207", "mobile_contract_id": 11, "network_provider_id": 21, "phone_number_id": 11, "created_at": "2024-02-01T13:18:56.000000Z", "updated_at": "2024-02-01T13:18:56.000000Z" }, "deactivated_at": null, "created_at": "2024-02-01T13:18:56.000000Z", "updated_at": "2024-02-01T13:18:56.000000Z" } }, { "id": "2", "type": "devices", "attributes": { "form_factor": "Phone", "serial_number": "3717753206", "imei": "310418260144117", "device_manufacturer_id": 23, "device_manufacturer": { "id": 23, "name": "Fugiat", "created_at": "2024-02-01T13:18:56.000000Z", "updated_at": "2024-02-01T13:18:56.000000Z" }, "device_model_id": 12, "device_model": { "id": 12, "name": "Rerum", "device_manufacturer_id": 24, "created_at": "2024-02-01T13:18:56.000000Z", "updated_at": "2024-02-01T13:18:56.000000Z" }, "operating_system": "iOS", "user_id": 12, "user": { "id": 12, "name": "Vesta Emmerich", "email": "gino.schulist@example.org", "email_verified_at": "2024-02-01T13:18:52.000000Z", "created_at": "2024-02-01T13:18:52.000000Z", "updated_at": "2024-02-01T13:18:52.000000Z" }, "sim_card_id": 1, "sim_card": { "id": 1, "serial_number": "366884779053177", "mobile_contract_id": 1, "network_provider_id": 1, "phone_number_id": 1, "created_at": "2024-02-01T13:18:52.000000Z", "updated_at": "2024-02-01T13:18:52.000000Z" }, "deactivated_at": null, "created_at": "2024-02-01T18:04:17.000000Z", "updated_at": "2024-02-01T18:04:17.000000Z" } } ], "jsonapi": { "version": "1.0" } }'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/devices
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'POST Device'
+      description: 'Creates a new Device.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      form_factor:
+        name: form_factor
+        description: 'The form factor of the device.'
+        required: false
+        example: '"Phone" or "Tablet"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      serial_number:
+        name: serial_number
+        description: 'The serial number of the device.'
+        required: false
+        example: '"132389NGGG"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      imei:
+        name: imei
+        description: 'The imei of the device.'
+        required: false
+        example: '"123456789012345"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      device_manufacturer_id:
+        name: device_manufacturer_id
+        description: 'The id of the device manufacturer.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      device_model_id:
+        name: device_model_id
+        description: 'The id of the device model.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      operating_system:
+        name: operating_system
+        description: 'The OS of the device.'
+        required: false
+        example: '"Android" or "iOS"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      user_id:
+        name: user_id
+        description: 'The id of the sim card.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      sim_card_id:
+        name: sim_card_id
+        description: 'The id of the sim card.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanBodyParameters:
+      form_factor: '"Phone" or "Tablet"'
+      serial_number: '"132389NGGG"'
+      imei: '"123456789012345"'
+      device_manufacturer_id: 1
+      device_model_id: 1
+      operating_system: '"Android" or "iOS"'
+      user_id: 1
+      sim_card_id: 1
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{ "data": { "id": "11", "type": "devices", "attributes": { "form_factor": "et", "serial_number": "cupiditate", "imei": "et", "device_manufacturer_id": "1", "device_manufacturer": { "id": 1, "name": "Autem", "created_at": "2024-02-01T13:18:51.000000Z", "updated_at": "2024-02-01T13:18:51.000000Z" }, "device_model_id": "1", "device_model": { "id": 1, "name": "Omnis", "device_manufacturer_id": 2, "created_at": "2024-02-01T13:18:52.000000Z", "updated_at": "2024-02-01T13:18:52.000000Z" }, "operating_system": "voluptas", "user_id": "1", "user": { "id": 1, "name": "Berneice Orn", "email": "dkovacek@example.org", "email_verified_at": "2024-02-01T13:18:52.000000Z", "created_at": "2024-02-01T13:18:52.000000Z", "updated_at": "2024-02-01T13:18:52.000000Z" }, "sim_card_id": "1", "sim_card": { "id": 1, "serial_number": "366884779053177", "mobile_contract_id": 1, "network_provider_id": 1, "phone_number_id": 1, "created_at": "2024-02-01T13:18:52.000000Z", "updated_at": "2024-02-01T13:18:52.000000Z" }, "deactivated_at": null, "created_at": "2024-02-01T18:04:17.000000Z", "updated_at": "2024-02-01T18:04:17.000000Z" } }, "jsonapi": { "version": "1.0" } }'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 422
+        content: '{ "message": "The form factor field is required. (and 7 more errors)", "errors": { "form_factor": [ "The form factor field is required." ], "serial_number": [ "The serial number field is required." ], "imei": [ "The imei field is required." ], "device_manufacturer_id": [ "The device manufacturer id field is required." ], "device_model_id": [ "The device model id field is required." ], "operating_system": [ "The operating system field is required." ], "user_id": [ "The user id field is required." ], "sim_card_id": [ "The sim card id field is required." ] } }'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/devices/{device_id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'PUT Device'
+      description: 'Updates a Device.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      device_id:
+        name: device_id
+        description: 'The ID of the device.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      device_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      user_id:
+        name: user_id
+        description: 'The id of the user.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      sim_card_id:
+        name: sim_card_id
+        description: 'The id of the sim card.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanBodyParameters:
+      user_id: 1
+      sim_card_id: 1
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{ "data": { "id": "11", "type": "devices", "attributes": { "form_factor": "et", "serial_number": "cupiditate", "imei": "et", "device_manufacturer_id": "1", "device_manufacturer": { "id": 1, "name": "Autem", "created_at": "2024-02-01T13:18:51.000000Z", "updated_at": "2024-02-01T13:18:51.000000Z" }, "device_model_id": "1", "device_model": { "id": 1, "name": "Omnis", "device_manufacturer_id": 2, "created_at": "2024-02-01T13:18:52.000000Z", "updated_at": "2024-02-01T13:18:52.000000Z" }, "operating_system": "voluptas", "user_id": "1", "user": { "id": 1, "name": "Berneice Orn", "email": "dkovacek@example.org", "email_verified_at": "2024-02-01T13:18:52.000000Z", "created_at": "2024-02-01T13:18:52.000000Z", "updated_at": "2024-02-01T13:18:52.000000Z" }, "sim_card_id": "1", "sim_card": { "id": 1, "serial_number": "366884779053177", "mobile_contract_id": 1, "network_provider_id": 1, "phone_number_id": 1, "created_at": "2024-02-01T13:18:52.000000Z", "updated_at": "2024-02-01T13:18:52.000000Z" }, "deactivated_at": null, "created_at": "2024-02-01T18:04:17.000000Z", "updated_at": "2024-02-01T18:04:17.000000Z" } }, "jsonapi": { "version": "1.0" } }'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 422
+        content: '{ { "sim_card_id": [ "The sim card id field is required." ] } }'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PATCH
+    uri: 'api/v1/devices/{device_id}/deactivate'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'PATCH Deactivate Device'
+      description: 'Deactivates a Device.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      device_id:
+        name: device_id
+        description: 'The ID of the device.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      device_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{ "data": { "id": "11", "type": "devices", "attributes": { "form_factor": "et", "serial_number": "cupiditate", "imei": "et", "device_manufacturer_id": "1", "device_manufacturer": { "id": 1, "name": "Autem", "created_at": "2024-02-01T13:18:51.000000Z", "updated_at": "2024-02-01T13:18:51.000000Z" }, "device_model_id": "1", "device_model": { "id": 1, "name": "Omnis", "device_manufacturer_id": 2, "created_at": "2024-02-01T13:18:52.000000Z", "updated_at": "2024-02-01T13:18:52.000000Z" }, "operating_system": "voluptas", "user_id": "1", "user": { "id": 1, "name": "Berneice Orn", "email": "dkovacek@example.org", "email_verified_at": "2024-02-01T13:18:52.000000Z", "created_at": "2024-02-01T13:18:52.000000Z", "updated_at": "2024-02-01T13:18:52.000000Z" }, "sim_card_id": "1", "sim_card": { "id": 1, "serial_number": "366884779053177", "mobile_contract_id": 1, "network_provider_id": 1, "phone_number_id": 1, "created_at": "2024-02-01T13:18:52.000000Z", "updated_at": "2024-02-01T13:18:52.000000Z" }, "deactivated_at": null, "created_at": "2024-02-01T18:04:17.000000Z", "updated_at": "2024-02-01T18:04:17.000000Z" } }, "jsonapi": { "version": "1.0" } }'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 422
+        content: '{ { "sim_card_id": [ "The sim card id field is required." ] } }'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/export-devices
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'GET Export Devices'
+      description: 'Exports all devices as CSV.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: ''
+        headers:
+          content-type: 'text/csv; charset=UTF-8'
+          content-disposition: 'attachment; filename=devices.csv'
+          pragma: no-cache
+          cache-control: 'must-revalidate, private'
+          expires: '0'
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '59'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/users
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'GET Users'
+      description: 'Returns list of all users.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{ "data": [ { "id": "1", "type": "users", "attributes": { "name": "Berneice Orn", "email": "dkovacek@example.org", "created_at": "2024-02-01T13:18:52.000000Z", "updated_at": "2024-02-01T13:18:52.000000Z" } }, { "id": "2", "type": "users", "attributes": { "name": "Arjun Schmidt I", "email": "weber.solon@example.net", "created_at": "2024-02-01T13:18:52.000000Z", "updated_at": "2024-02-01T13:18:52.000000Z" } }, { "id": "3", "type": "users", "attributes": { "name": "Prof. Myriam Douglas", "email": "trycia.weissnat@example.com", "created_at": "2024-02-01T13:18:52.000000Z", "updated_at": "2024-02-01T13:18:52.000000Z" } }, { "id": "4", "type": "users", "attributes": { "name": "Luciano Sporer", "email": "amya10@example.net", "created_at": "2024-02-01T13:18:52.000000Z", "updated_at": "2024-02-01T13:18:52.000000Z" } }, { "id": "5", "type": "users", "attributes": { "name": "Dr. Garret Rice", "email": "mollie80@example.net", "created_at": "2024-02-01T13:18:52.000000Z", "updated_at": "2024-02-01T13:18:52.000000Z" } }, { "id": "6", "type": "users", "attributes": { "name": "Carter Christiansen", "email": "lorenz.emmerich@example.com", "created_at": "2024-02-01T13:18:52.000000Z", "updated_at": "2024-02-01T13:18:52.000000Z" } }, { "id": "7", "type": "users", "attributes": { "name": "Prof. Ernestine O''Connell", "email": "streich.antonia@example.org", "created_at": "2024-02-01T13:18:52.000000Z", "updated_at": "2024-02-01T13:18:52.000000Z" } }, { "id": "8", "type": "users", "attributes": { "name": "Demond McLaughlin", "email": "ebeatty@example.com", "created_at": "2024-02-01T13:20:02.000000Z", "updated_at": "2024-02-01T13:20:02.000000Z" } }, { "id": "30", "type": "users", "attributes": { "name": "Shaylee Roberts Sr.", "email": "zmuller@example.com", "created_at": "2024-02-01T13:20:02.000000Z", "updated_at": "2024-02-01T13:20:02.000000Z" } } ], "jsonapi": { "version": "1.0" } }'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/sim_cards
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'GET Sim Cards'
+      description: 'Returns list of all sim cards.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{ "data": [ { "id": "1", "type": "simCards", "attributes": { "serial_number": "366884779053177", "mobile_contract": { "id": 19, "name": "illo", "description": "Officia enim iste minus a aperiam ut.", "created_at": "2024-02-01T13:18:56.000000Z", "updated_at": "2024-02-01T13:18:56.000000Z" }, "network_provider": { "id": 37, "name": "Harum", "created_at": "2024-02-01T13:18:56.000000Z", "updated_at": "2024-02-01T13:18:56.000000Z" }, "phone_number": { "id": 19, "number": "5236057732", "network_provider_id": 38, "created_at": "2024-02-01T13:18:56.000000Z", "updated_at": "2024-02-01T13:18:56.000000Z" } } }, { "id": "20", "type": "simCards", "attributes": { "serial_number": "901658521857586", "mobile_contract": { "id": 20, "name": "quis", "description": "Quo voluptate rerum nesciunt sapiente quia.", "created_at": "2024-02-01T13:18:56.000000Z", "updated_at": "2024-02-01T13:18:56.000000Z" }, "network_provider": { "id": 39, "name": "Rem", "created_at": "2024-02-01T13:18:56.000000Z", "updated_at": "2024-02-01T13:18:56.000000Z" }, "phone_number": { "id": 20, "number": "9839311741", "network_provider_id": 40, "created_at": "2024-02-01T13:18:56.000000Z", "updated_at": "2024-02-01T13:18:56.000000Z" } } } ], "jsonapi": { "version": "1.0" } }'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/device_manufacturers
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'GET Device Manufacturers'
+      description: 'Returns list of all device manufacturers.'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{ "data": [ { "id": "1", "type": "deviceManufacturers", "attributes": { "name": "Autem", "device_models": [], "created_at": "2024-02-01T13:18:51.000000Z", "updated_at": "2024-02-01T13:18:51.000000Z" } }, { "id": "2", "type": "deviceManufacturers", "attributes": { "name": "Maiores", "device_models": [ { "id": 1, "name": "Omnis", "device_manufacturer_id": 2, "created_at": "2024-02-01T13:18:52.000000Z", "updated_at": "2024-02-01T13:18:52.000000Z" } ], "created_at": "2024-02-01T13:18:52.000000Z", "updated_at": "2024-02-01T13:18:52.000000Z" } }, { "id": "3", "type": "deviceManufacturers", "attributes": { "name": "Unde", "device_models": [], "created_at": "2024-02-01T13:18:52.000000Z", "updated_at": "2024-02-01T13:18:52.000000Z" } }, { "id": "4", "type": "deviceManufacturers", "attributes": { "name": "Sint", "device_models": [ { "id": 2, "name": "Ex", "device_manufacturer_id": 4, "created_at": "2024-02-01T13:18:52.000000Z", "updated_at": "2024-02-01T13:18:52.000000Z" } ], "created_at": "2024-02-01T13:18:52.000000Z", "updated_at": "2024-02-01T13:18:52.000000Z" } }, { "id": "5", "type": "deviceManufacturers", "attributes": { "name": "Iusto", "device_models": [], "created_at": "2024-02-01T13:18:52.000000Z", "updated_at": "2024-02-01T13:18:52.000000Z" } } ], "jsonapi": { "version": "1.0" } }'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

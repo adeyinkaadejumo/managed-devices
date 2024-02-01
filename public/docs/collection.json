@@ -1,0 +1,384 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/localhost"
+        }
+    ],
+    "info": {
+        "name": "Laravel",
+        "_postman_id": "3cdc95a1-f43c-499b-ab10-f4e8d83f7825",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "GET Devices",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/devices",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/devices"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"operating_system\":\"\\\"Android\\\" or \\\"iOS\\\"\"}"
+                        },
+                        "description": "Returns list of all devices.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{ \"data\": [ { \"id\": \"1\", \"type\": \"devices\", \"attributes\": { \"form_factor\": \"Tablet\", \"serial_number\": \"1011057232\", \"imei\": \"083875543108664\", \"device_manufacturer_id\": 21, \"device_manufacturer\": { \"id\": 21, \"name\": \"Error\", \"created_at\": \"2024-02-01T13:18:56.000000Z\", \"updated_at\": \"2024-02-01T13:18:56.000000Z\" }, \"device_model_id\": 11, \"device_model\": { \"id\": 11, \"name\": \"Quod\", \"device_manufacturer_id\": 22, \"created_at\": \"2024-02-01T13:18:56.000000Z\", \"updated_at\": \"2024-02-01T13:18:56.000000Z\" }, \"operating_system\": \"iOS\", \"user_id\": 11, \"user\": { \"id\": 11, \"name\": \"Abagail Kreiger\", \"email\": \"koepp.keegan@example.org\", \"email_verified_at\": \"2024-02-01T13:18:56.000000Z\", \"created_at\": \"2024-02-01T13:18:56.000000Z\", \"updated_at\": \"2024-02-01T13:18:56.000000Z\" }, \"sim_card_id\": 11, \"sim_card\": { \"id\": 11, \"serial_number\": \"085684662869207\", \"mobile_contract_id\": 11, \"network_provider_id\": 21, \"phone_number_id\": 11, \"created_at\": \"2024-02-01T13:18:56.000000Z\", \"updated_at\": \"2024-02-01T13:18:56.000000Z\" }, \"deactivated_at\": null, \"created_at\": \"2024-02-01T13:18:56.000000Z\", \"updated_at\": \"2024-02-01T13:18:56.000000Z\" } }, { \"id\": \"2\", \"type\": \"devices\", \"attributes\": { \"form_factor\": \"Phone\", \"serial_number\": \"3717753206\", \"imei\": \"310418260144117\", \"device_manufacturer_id\": 23, \"device_manufacturer\": { \"id\": 23, \"name\": \"Fugiat\", \"created_at\": \"2024-02-01T13:18:56.000000Z\", \"updated_at\": \"2024-02-01T13:18:56.000000Z\" }, \"device_model_id\": 12, \"device_model\": { \"id\": 12, \"name\": \"Rerum\", \"device_manufacturer_id\": 24, \"created_at\": \"2024-02-01T13:18:56.000000Z\", \"updated_at\": \"2024-02-01T13:18:56.000000Z\" }, \"operating_system\": \"iOS\", \"user_id\": 12, \"user\": { \"id\": 12, \"name\": \"Vesta Emmerich\", \"email\": \"gino.schulist@example.org\", \"email_verified_at\": \"2024-02-01T13:18:52.000000Z\", \"created_at\": \"2024-02-01T13:18:52.000000Z\", \"updated_at\": \"2024-02-01T13:18:52.000000Z\" }, \"sim_card_id\": 1, \"sim_card\": { \"id\": 1, \"serial_number\": \"366884779053177\", \"mobile_contract_id\": 1, \"network_provider_id\": 1, \"phone_number_id\": 1, \"created_at\": \"2024-02-01T13:18:52.000000Z\", \"updated_at\": \"2024-02-01T13:18:52.000000Z\" }, \"deactivated_at\": null, \"created_at\": \"2024-02-01T18:04:17.000000Z\", \"updated_at\": \"2024-02-01T18:04:17.000000Z\" } } ], \"jsonapi\": { \"version\": \"1.0\" } }",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST Device",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/devices",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/devices"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"form_factor\":\"\\\"Phone\\\" or \\\"Tablet\\\"\",\"serial_number\":\"\\\"132389NGGG\\\"\",\"imei\":\"\\\"123456789012345\\\"\",\"device_manufacturer_id\":1,\"device_model_id\":1,\"operating_system\":\"\\\"Android\\\" or \\\"iOS\\\"\",\"user_id\":1,\"sim_card_id\":1}"
+                        },
+                        "description": "Creates a new Device.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{ \"data\": { \"id\": \"11\", \"type\": \"devices\", \"attributes\": { \"form_factor\": \"et\", \"serial_number\": \"cupiditate\", \"imei\": \"et\", \"device_manufacturer_id\": \"1\", \"device_manufacturer\": { \"id\": 1, \"name\": \"Autem\", \"created_at\": \"2024-02-01T13:18:51.000000Z\", \"updated_at\": \"2024-02-01T13:18:51.000000Z\" }, \"device_model_id\": \"1\", \"device_model\": { \"id\": 1, \"name\": \"Omnis\", \"device_manufacturer_id\": 2, \"created_at\": \"2024-02-01T13:18:52.000000Z\", \"updated_at\": \"2024-02-01T13:18:52.000000Z\" }, \"operating_system\": \"voluptas\", \"user_id\": \"1\", \"user\": { \"id\": 1, \"name\": \"Berneice Orn\", \"email\": \"dkovacek@example.org\", \"email_verified_at\": \"2024-02-01T13:18:52.000000Z\", \"created_at\": \"2024-02-01T13:18:52.000000Z\", \"updated_at\": \"2024-02-01T13:18:52.000000Z\" }, \"sim_card_id\": \"1\", \"sim_card\": { \"id\": 1, \"serial_number\": \"366884779053177\", \"mobile_contract_id\": 1, \"network_provider_id\": 1, \"phone_number_id\": 1, \"created_at\": \"2024-02-01T13:18:52.000000Z\", \"updated_at\": \"2024-02-01T13:18:52.000000Z\" }, \"deactivated_at\": null, \"created_at\": \"2024-02-01T18:04:17.000000Z\", \"updated_at\": \"2024-02-01T18:04:17.000000Z\" } }, \"jsonapi\": { \"version\": \"1.0\" } }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{ \"message\": \"The form factor field is required. (and 7 more errors)\", \"errors\": { \"form_factor\": [ \"The form factor field is required.\" ], \"serial_number\": [ \"The serial number field is required.\" ], \"imei\": [ \"The imei field is required.\" ], \"device_manufacturer_id\": [ \"The device manufacturer id field is required.\" ], \"device_model_id\": [ \"The device model id field is required.\" ], \"operating_system\": [ \"The operating system field is required.\" ], \"user_id\": [ \"The user id field is required.\" ], \"sim_card_id\": [ \"The sim card id field is required.\" ] } }",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "PUT Device",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/devices\/:device_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/devices\/:device_id",
+                            "variable": [
+                                {
+                                    "id": "device_id",
+                                    "key": "device_id",
+                                    "value": "1",
+                                    "description": "The ID of the device."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"user_id\":1,\"sim_card_id\":1}"
+                        },
+                        "description": "Updates a Device.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{ \"data\": { \"id\": \"11\", \"type\": \"devices\", \"attributes\": { \"form_factor\": \"et\", \"serial_number\": \"cupiditate\", \"imei\": \"et\", \"device_manufacturer_id\": \"1\", \"device_manufacturer\": { \"id\": 1, \"name\": \"Autem\", \"created_at\": \"2024-02-01T13:18:51.000000Z\", \"updated_at\": \"2024-02-01T13:18:51.000000Z\" }, \"device_model_id\": \"1\", \"device_model\": { \"id\": 1, \"name\": \"Omnis\", \"device_manufacturer_id\": 2, \"created_at\": \"2024-02-01T13:18:52.000000Z\", \"updated_at\": \"2024-02-01T13:18:52.000000Z\" }, \"operating_system\": \"voluptas\", \"user_id\": \"1\", \"user\": { \"id\": 1, \"name\": \"Berneice Orn\", \"email\": \"dkovacek@example.org\", \"email_verified_at\": \"2024-02-01T13:18:52.000000Z\", \"created_at\": \"2024-02-01T13:18:52.000000Z\", \"updated_at\": \"2024-02-01T13:18:52.000000Z\" }, \"sim_card_id\": \"1\", \"sim_card\": { \"id\": 1, \"serial_number\": \"366884779053177\", \"mobile_contract_id\": 1, \"network_provider_id\": 1, \"phone_number_id\": 1, \"created_at\": \"2024-02-01T13:18:52.000000Z\", \"updated_at\": \"2024-02-01T13:18:52.000000Z\" }, \"deactivated_at\": null, \"created_at\": \"2024-02-01T18:04:17.000000Z\", \"updated_at\": \"2024-02-01T18:04:17.000000Z\" } }, \"jsonapi\": { \"version\": \"1.0\" } }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{ { \"sim_card_id\": [ \"The sim card id field is required.\" ] } }",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "PATCH Deactivate Device",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/devices\/:device_id\/deactivate",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/devices\/:device_id\/deactivate",
+                            "variable": [
+                                {
+                                    "id": "device_id",
+                                    "key": "device_id",
+                                    "value": "1",
+                                    "description": "The ID of the device."
+                                }
+                            ]
+                        },
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Deactivates a Device.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{ \"data\": { \"id\": \"11\", \"type\": \"devices\", \"attributes\": { \"form_factor\": \"et\", \"serial_number\": \"cupiditate\", \"imei\": \"et\", \"device_manufacturer_id\": \"1\", \"device_manufacturer\": { \"id\": 1, \"name\": \"Autem\", \"created_at\": \"2024-02-01T13:18:51.000000Z\", \"updated_at\": \"2024-02-01T13:18:51.000000Z\" }, \"device_model_id\": \"1\", \"device_model\": { \"id\": 1, \"name\": \"Omnis\", \"device_manufacturer_id\": 2, \"created_at\": \"2024-02-01T13:18:52.000000Z\", \"updated_at\": \"2024-02-01T13:18:52.000000Z\" }, \"operating_system\": \"voluptas\", \"user_id\": \"1\", \"user\": { \"id\": 1, \"name\": \"Berneice Orn\", \"email\": \"dkovacek@example.org\", \"email_verified_at\": \"2024-02-01T13:18:52.000000Z\", \"created_at\": \"2024-02-01T13:18:52.000000Z\", \"updated_at\": \"2024-02-01T13:18:52.000000Z\" }, \"sim_card_id\": \"1\", \"sim_card\": { \"id\": 1, \"serial_number\": \"366884779053177\", \"mobile_contract_id\": 1, \"network_provider_id\": 1, \"phone_number_id\": 1, \"created_at\": \"2024-02-01T13:18:52.000000Z\", \"updated_at\": \"2024-02-01T13:18:52.000000Z\" }, \"deactivated_at\": null, \"created_at\": \"2024-02-01T18:04:17.000000Z\", \"updated_at\": \"2024-02-01T18:04:17.000000Z\" } }, \"jsonapi\": { \"version\": \"1.0\" } }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 422,
+                            "body": "{ { \"sim_card_id\": [ \"The sim card id field is required.\" ] } }",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET Export Devices",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/export-devices",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/export-devices"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Exports all devices as CSV.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "content-type",
+                                    "value": "text\/csv; charset=UTF-8"
+                                },
+                                {
+                                    "key": "content-disposition",
+                                    "value": "attachment; filename=devices.csv"
+                                },
+                                {
+                                    "key": "pragma",
+                                    "value": "no-cache"
+                                },
+                                {
+                                    "key": "cache-control",
+                                    "value": "must-revalidate, private"
+                                },
+                                {
+                                    "key": "expires",
+                                    "value": "0"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "59"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET Users",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/users",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/users"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Returns list of all users.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{ \"data\": [ { \"id\": \"1\", \"type\": \"users\", \"attributes\": { \"name\": \"Berneice Orn\", \"email\": \"dkovacek@example.org\", \"created_at\": \"2024-02-01T13:18:52.000000Z\", \"updated_at\": \"2024-02-01T13:18:52.000000Z\" } }, { \"id\": \"2\", \"type\": \"users\", \"attributes\": { \"name\": \"Arjun Schmidt I\", \"email\": \"weber.solon@example.net\", \"created_at\": \"2024-02-01T13:18:52.000000Z\", \"updated_at\": \"2024-02-01T13:18:52.000000Z\" } }, { \"id\": \"3\", \"type\": \"users\", \"attributes\": { \"name\": \"Prof. Myriam Douglas\", \"email\": \"trycia.weissnat@example.com\", \"created_at\": \"2024-02-01T13:18:52.000000Z\", \"updated_at\": \"2024-02-01T13:18:52.000000Z\" } }, { \"id\": \"4\", \"type\": \"users\", \"attributes\": { \"name\": \"Luciano Sporer\", \"email\": \"amya10@example.net\", \"created_at\": \"2024-02-01T13:18:52.000000Z\", \"updated_at\": \"2024-02-01T13:18:52.000000Z\" } }, { \"id\": \"5\", \"type\": \"users\", \"attributes\": { \"name\": \"Dr. Garret Rice\", \"email\": \"mollie80@example.net\", \"created_at\": \"2024-02-01T13:18:52.000000Z\", \"updated_at\": \"2024-02-01T13:18:52.000000Z\" } }, { \"id\": \"6\", \"type\": \"users\", \"attributes\": { \"name\": \"Carter Christiansen\", \"email\": \"lorenz.emmerich@example.com\", \"created_at\": \"2024-02-01T13:18:52.000000Z\", \"updated_at\": \"2024-02-01T13:18:52.000000Z\" } }, { \"id\": \"7\", \"type\": \"users\", \"attributes\": { \"name\": \"Prof. Ernestine O'Connell\", \"email\": \"streich.antonia@example.org\", \"created_at\": \"2024-02-01T13:18:52.000000Z\", \"updated_at\": \"2024-02-01T13:18:52.000000Z\" } }, { \"id\": \"8\", \"type\": \"users\", \"attributes\": { \"name\": \"Demond McLaughlin\", \"email\": \"ebeatty@example.com\", \"created_at\": \"2024-02-01T13:20:02.000000Z\", \"updated_at\": \"2024-02-01T13:20:02.000000Z\" } }, { \"id\": \"30\", \"type\": \"users\", \"attributes\": { \"name\": \"Shaylee Roberts Sr.\", \"email\": \"zmuller@example.com\", \"created_at\": \"2024-02-01T13:20:02.000000Z\", \"updated_at\": \"2024-02-01T13:20:02.000000Z\" } } ], \"jsonapi\": { \"version\": \"1.0\" } }",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET Sim Cards",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/sim_cards",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/sim_cards"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Returns list of all sim cards.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{ \"data\": [ { \"id\": \"1\", \"type\": \"simCards\", \"attributes\": { \"serial_number\": \"366884779053177\", \"mobile_contract\": { \"id\": 19, \"name\": \"illo\", \"description\": \"Officia enim iste minus a aperiam ut.\", \"created_at\": \"2024-02-01T13:18:56.000000Z\", \"updated_at\": \"2024-02-01T13:18:56.000000Z\" }, \"network_provider\": { \"id\": 37, \"name\": \"Harum\", \"created_at\": \"2024-02-01T13:18:56.000000Z\", \"updated_at\": \"2024-02-01T13:18:56.000000Z\" }, \"phone_number\": { \"id\": 19, \"number\": \"5236057732\", \"network_provider_id\": 38, \"created_at\": \"2024-02-01T13:18:56.000000Z\", \"updated_at\": \"2024-02-01T13:18:56.000000Z\" } } }, { \"id\": \"20\", \"type\": \"simCards\", \"attributes\": { \"serial_number\": \"901658521857586\", \"mobile_contract\": { \"id\": 20, \"name\": \"quis\", \"description\": \"Quo voluptate rerum nesciunt sapiente quia.\", \"created_at\": \"2024-02-01T13:18:56.000000Z\", \"updated_at\": \"2024-02-01T13:18:56.000000Z\" }, \"network_provider\": { \"id\": 39, \"name\": \"Rem\", \"created_at\": \"2024-02-01T13:18:56.000000Z\", \"updated_at\": \"2024-02-01T13:18:56.000000Z\" }, \"phone_number\": { \"id\": 20, \"number\": \"9839311741\", \"network_provider_id\": 40, \"created_at\": \"2024-02-01T13:18:56.000000Z\", \"updated_at\": \"2024-02-01T13:18:56.000000Z\" } } } ], \"jsonapi\": { \"version\": \"1.0\" } }",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET Device Manufacturers",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/device_manufacturers",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/device_manufacturers"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Returns list of all device manufacturers.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{ \"data\": [ { \"id\": \"1\", \"type\": \"deviceManufacturers\", \"attributes\": { \"name\": \"Autem\", \"device_models\": [], \"created_at\": \"2024-02-01T13:18:51.000000Z\", \"updated_at\": \"2024-02-01T13:18:51.000000Z\" } }, { \"id\": \"2\", \"type\": \"deviceManufacturers\", \"attributes\": { \"name\": \"Maiores\", \"device_models\": [ { \"id\": 1, \"name\": \"Omnis\", \"device_manufacturer_id\": 2, \"created_at\": \"2024-02-01T13:18:52.000000Z\", \"updated_at\": \"2024-02-01T13:18:52.000000Z\" } ], \"created_at\": \"2024-02-01T13:18:52.000000Z\", \"updated_at\": \"2024-02-01T13:18:52.000000Z\" } }, { \"id\": \"3\", \"type\": \"deviceManufacturers\", \"attributes\": { \"name\": \"Unde\", \"device_models\": [], \"created_at\": \"2024-02-01T13:18:52.000000Z\", \"updated_at\": \"2024-02-01T13:18:52.000000Z\" } }, { \"id\": \"4\", \"type\": \"deviceManufacturers\", \"attributes\": { \"name\": \"Sint\", \"device_models\": [ { \"id\": 2, \"name\": \"Ex\", \"device_manufacturer_id\": 4, \"created_at\": \"2024-02-01T13:18:52.000000Z\", \"updated_at\": \"2024-02-01T13:18:52.000000Z\" } ], \"created_at\": \"2024-02-01T13:18:52.000000Z\", \"updated_at\": \"2024-02-01T13:18:52.000000Z\" } }, { \"id\": \"5\", \"type\": \"deviceManufacturers\", \"attributes\": { \"name\": \"Iusto\", \"device_models\": [], \"created_at\": \"2024-02-01T13:18:52.000000Z\", \"updated_at\": \"2024-02-01T13:18:52.000000Z\" } } ], \"jsonapi\": { \"version\": \"1.0\" } }",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "noauth"
+    }
+}
