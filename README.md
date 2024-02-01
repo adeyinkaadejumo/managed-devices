@@ -61,6 +61,6 @@ php artisan test
 
 ## Documentation
 
-API documentation is accessible via `/doc`.
+API documentation is accessible in the browser via `/docs`.
 
 OpenAPI yaml file is `./public/docs/openapi.yaml`
